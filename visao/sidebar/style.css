@@ -1,0 +1,487 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body{
+  background-color: #E4E9F7;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.sidebar.close{
+  width: 78px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+.sidebar .logo-details .logo_name{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover{
+  background: #1d1b31;
+}
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #1d1b31;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar .profile-details{
+  position: fixed;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d1b31;
+  padding: 12px 0;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details{
+  background: none;
+}
+.sidebar.close .profile-details{
+  width: 78px;
+}
+.sidebar .profile-details .profile-content{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile-details img{
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details img{
+  padding: 10px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job{
+  display: none;
+}
+.sidebar .profile-details .job{
+  font-size: 12px;
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  height: 100vh;
+  
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  padding: 12px;
+}
+.teste{
+  padding-left: 120px
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-content{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+}
+.home-section .home-content .bx-menu{
+  cursor: pointer;
+  margin-right: 10px;
+}
+.home-section .home-content .text{
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ... Seu código CSS existente ... */
+
+/* Estilos para tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #EF6B48; /* Tom de laranja */
+  color: white;
+}
+
+
+/* ... Seu código CSS existente ... */
+
+/* Estilos para botões */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #EF6B48; /* Tom de laranja */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #EF6B48; /* Tom de laranja mais escuro ao passar o mouse */
+}
+
+/* Estilos para tipos de botões */
+.button.primary {
+  background-color: #FFA500; /* Tom de laranja */
+}
+
+.button.success {
+  background-color: #4CAF50; /* Verde */
+}
+
+.button.danger {
+  background-color: #FF5733; /* Vermelho */
+}
+
+/* Estilos para botões de input (submit e reset) */
+input[type="submit"].button,
+input[type="reset"].button {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #EF6B48; /* Tom de laranja */
+  color: white;
+  border: none;
+  border-radius: 30px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 18px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+input[type="submit"].button:hover,
+input[type="reset"].button:hover {
+  background-color: #EF6B48; /* Tom de laranja mais escuro ao passar o mouse */
+}
+
+
+/* ... Outros estilos CSS ... */
+
+
+
+/* Estilos para links */
+a {
+  color: white; /* Tom de laranja */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+
+/* Estilos para inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+/* ... Mais estilos CSS ... */
+
+
+
+/* Estilo para o botão "Excluir" */
+form[action="delete.php"] button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #EF6B48; /* Tom de laranja */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+}
+
+form[action="delete.php"] button:hover {
+  background-color: #ff1500; /* Tom de laranja mais escuro ao passar o mouse */
+}
+
+/* Estilo para o botão "Editar" */
+form[action="formAlteraCliente.php"] button,
+form[action="formAlteraProduto.php"] button,
+form[action="formAlteraCargo.php"] button,
+form[action="formAlteraFornecedor.php"] button,
+form[action="formAlteraFuncionario.php"] button{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+form[action="formAlteraCliente.php"] button:hover,
+form[action="formAlteraProduto.php"] button:hover,
+form[action="formAlteraCargo.php"] button:hover,
+form[action="formAlteraFornecedor.php"] button:hover,
+form[action="formAlteraFuncionario.php"] button:hover {
+  background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+}
+
+
+
+
+form[action="novocliente.php"] button,
+form[action="novoCargo.php"] button,
+form[action="novoFornecedor.php"] button, 
+form[action="novoFuncionario.php"] button, 
+form[action="novoProduto.php"] button,
+form[action="abrirVenda.php"] button,
+form[action="abrirCompra.php"] button{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #EF6B48; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 5px;
+}
+.butao{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #EF6B48; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Arredonda as bordas */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+/* Estilos para o select */
+select {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+}
+
+/* Estilizando as opções do select */
+select option {
+  background-color: white;
+  color: #11101d;
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Estilo para o select quando está focado */
+select:focus {
+  border-color: #FF5733; /* Tom de laranja */
+  outline: none;
+}
+
+
+@media screen and (max-width: 400px){
+  .sidebar{
+    width: 240px;
+  }
+  .sidebar.close{
+    width: 78px;
+  }
+  .sidebar .profile-details{
+    width: 240px;
+  }
+  .sidebar.close .profile-details{
+    background: none;
+  }
+  .sidebar.close .profile-details{
+    width: 78px;
+  }
+  .home-section{
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+  .sidebar.close ~ .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+}
